@@ -1,35 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Il nostro matrimonio</title>
+
+<title>Flavia & Marco</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-font-family: Arial;
-text-align:center;
 margin:0;
+font-family:Poppins;
+text-align:center;
+color:#444;
 }
 
 .hero{
 height:100vh;
-background:#f5e9e2;
+background:url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+color:white;
 }
 
-h1{
-font-size:40px;
+.hero h1{
+font-family:Playfair Display;
+font-size:60px;
+margin:0;
+}
+
+.hero p{
+font-size:22px;
+}
+
+button{
+padding:15px 30px;
+background:white;
+border:none;
+margin-top:20px;
+font-size:16px;
+cursor:pointer;
 }
 
 section{
-padding:50px 20px;
+padding:80px 20px;
+max-width:800px;
+margin:auto;
+}
+
+.countdown{
+font-size:30px;
+margin-top:20px;
+}
+
+.event{
+background:#f8f6f4;
+}
+
+.gallery img{
+width:30%;
+margin:10px;
+border-radius:10px;
+}
+
+footer{
+padding:40px;
+background:#eee;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -38,31 +82,61 @@ padding:50px 20px;
 
 <h1>Flavia & Marco</h1>
 
-<p>03 Ottobre 2026</p>
+<p>3 Ottobre 2026</p>
 
-<p>Non vediamo l'ora di festeggiare con voi</p>
+<div id="countdown" class="countdown"></div>
+
+<a href="#evento">
+<button>Scopri i dettagli</button>
+</a>
 
 </div>
 
 <section>
 
-<h2>Cerimonia</h2>
+<h2>La nostra storia</h2>
 
 <p>
-Caposanta Fortunata<br>
-Ore 11:30
+Dopo tanti momenti insieme abbiamo deciso di iniziare
+il capitolo più bello della nostra vita.
+Non vediamo l'ora di festeggiare con voi.
+</p>
+
+</section>
+
+<section id="evento" class="event">
+
+<h2>Il matrimonio</h2>
+
+<p>
+
+<strong>Cerimonia</strong><br>
+Ore 11:30<br>
+(aggiungi qui la chiesa)
+
+</p>
+
+<p>
+
+<strong>Ricevimento</strong><br>
+Ore 13:00<br>
+(aggiungi qui il ristorante)
+
 </p>
 
 </section>
 
 <section>
 
-<h2>Ricevimento</h2>
+<h2>I nostri momenti</h2>
 
-<p>
-Caposanta Fortunata<br>
-Ore 13:00
-</p>
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
+<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486">
+<img src="https://images.unsplash.com/photo-1509927083803-4bd519298ac4">
+
+</div>
 
 </section>
 
@@ -70,9 +144,34 @@ Ore 13:00
 
 <h2>Conferma presenza</h2>
 
-<p>Scrivici su WhatsApp</p>
+<p>Scrivici su WhatsApp per confermare</p>
 
 </section>
+
+<footer>
+
+<p>Flavia & Marco – 3 Ottobre 2026</p>
+
+</footer>
+
+<script>
+
+var countDownDate = new Date("Oct 3, 2026 15:00:00").getTime();
+
+var x = setInterval(function() {
+
+var now = new Date().getTime();
+var distance = countDownDate - now;
+
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+document.getElementById("countdown").innerHTML =
+days + " giorni " + hours + " ore";
+
+}, 1000);
+
+</script>
 
 </body>
 </html>
